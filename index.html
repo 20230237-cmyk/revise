@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drex Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div view-transition-name="about">
+    
+    <nav>
+      <div class="nav-container">
+        <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+          <span>Drex Cabana</span>
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="links">
+          <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <a href="about.html" view-transition-name="about">About</a>
+          </div>
+          <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <a href="Education.html" view-transition-name="Education">Education</a>
+          </div>
+          <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <a href="awards.html" view-transition-name="Awards">Awards</a>
+          </div>
+          <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <a href="Hobbies.html" view-transition-name="Hobbies">Hobbies</a>
+          </div>
+          <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+             <a href="works.html" view-transition-name="works">Works</a>
+          </div>
+        </div>
+        <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+      </div>
+
+      <div class="dropdown">
+        <div class="links">
+          <a href="about.html" view-transition-name="about">About</a>
+          <a href="Education.html" view-transition-name="Education">Education</a>
+          <a href="awards.html" view-transition-name="Awards">Awards</a>
+          <a href="Hobbies.html" view-transition-name="Hobbies">Hobbies</a>
+          <a href="works.html" view-transition-name="works">Work Accomplishments</a>
+          <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+        </div>
+      </div>
+
+    </nav>
+
+    <section>
+      <div class="main-container">
+        <div class="stylish-img">
+          <img src="./drevvv.jpg" alt="progress in picture" />
+        </div>
+        <div class="content">
+          <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
+            Hey I'm <span>Drex Cabana</span>
+          </h1>
+          <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">
+          </div>
+          <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+            In the spirit of aretē, I code with intention and design with soul. My portfolio is a reflection of meraki—doing something with passion, creativity, and love
+          </p>
+          <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                <a href="https://github.com/20230237-cmyk" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://mail.google.com/" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+
+          <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+           
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div> 
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+
+    function hamburg() {
+      const navbar = document.querySelector(".dropdown");
+      navbar.style.transform = "translateY(0px)";
+    }
+
+    function cancel() {
+      const navbar = document.querySelector(".dropdown");
+      navbar.style.transform = "translateY(-500px)";
+    }
+  </script>
+  <script src="index.js"></script>
+</body>
+</html>
