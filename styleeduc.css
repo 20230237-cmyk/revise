@@ -1,0 +1,191 @@
+:root {
+  --bg-main:       #e0f7fa; /* Light cyan background */
+  --bg-panel:      rgba(255, 255, 255, 0.8); /* Brighter glass panel */
+  --fg-main:       #004d40; /* Deep teal text */
+  --accent-dark:   #00bcd4; /* Vibrant cyan */
+  --accent-light:  #00e5ff; /* Bright cyan accent */
+  --dot-size:      16px;
+  --line-width:    4px;
+  --transition:    0.5s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-main);
+  color: var(--fg-main);
+}
+
+#education {
+  position: relative;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 4rem 2rem;
+  background: var(--bg-panel);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 188, 212, 0.3);
+  overflow: hidden;
+}
+
+#education h2 {
+  position: relative;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--fg-main);
+}
+
+#education h2::before {
+  content: "🎓";
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(-15deg);
+  font-size: 3rem;
+  color: var(--accent-light);
+  animation: logo-wiggle 2s ease-in-out infinite;
+}
+
+#education h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent-light));
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width var(--transition);
+}
+
+#education h2:hover::after {
+  width: 120px;
+}
+
+#education ul {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#education ul::before {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: var(--line-width);
+  background: var(--accent-dark);
+}
+
+#education li {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1rem 1rem 4rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: item-slide-in 0.6s forwards;
+}
+
+#education li:nth-child(n) {
+  animation-delay: calc(0.3s * var(--i));
+}
+
+#education li::before {
+  --i: var(--index);
+  content: "";
+  position: absolute;
+  left: 2rem;
+  top: 1rem;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background: var(--accent-dark);
+  border: 3px solid var(--accent-light);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-light);
+  transition: transform var(--transition);
+}
+
+#education li:hover::before {
+  transform: scale(1.4);
+}
+
+#education li h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: var(--accent-dark);
+}
+
+#education li p {
+  margin: 0.2rem 0;
+  line-height: 1.6;
+  color: var(--fg-main);
+}
+
+#education li p strong {
+  color: var(--accent-dark);
+}
+
+@keyframes logo-wiggle {
+  0%, 100% { transform: translateX(-50%) rotate(-15deg); }
+  50%      { transform: translateX(-50%) rotate(15deg); }
+}
+
+@keyframes item-slide-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 600px) {
+  #education {
+    padding: 3rem 1rem;
+  }
+  #education ul::before {
+    left: 1.2rem;
+  }
+  #education li {
+    padding-left: 3rem;
+  }
+  #education h2 {
+    font-size: 2rem;
+  }
+}
+
+nav .link a {
+  display: inline-block;
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+nav .link a:hover {
+  background-color: #00e5ff;
+}
+/* 📸 School Photo Styling */
+.school-photo {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+  border: 2px solid var(--accent-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: block;
+}
+
+.school-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 188, 212, 0.5);
+}
+

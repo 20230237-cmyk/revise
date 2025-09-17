@@ -1,0 +1,134 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Bright blue gradient */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #004aad; /* Deep blue text */
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.7); /* Brighter glass effect */
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 188, 212, 0.3); /* Cyan glow */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 1s ease forwards;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #00bcd4, #00e5ff); /* Bright cyan gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.9); /* Brighter card */
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.2); /* Soft cyan shadow */
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
+  color: #004aad;
+}
+
+li:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 1); /* Brighter on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-pic {
+  width: 250px;
+  display: block;
+  margin: 0 auto 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+  object-fit: cover;
+}
+
+nav .link a {
+  display: inline-block;
+  background-color: #00bcd4; /* Bright cyan */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+nav .link a:hover {
+  background-color: #00e5ff; /* Lighter cyan on hover */
+}
+
+/* 🎬 Video Wrapper */
+.video-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Responsive fallback */
+}
+
+/* 🎬 Video Row Container */
+.video-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* 🟦 Small Square Video Styling */
+.video-row video {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* 🌀 Hover Effect */
+.video-row video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 188, 212, 0.4);
+}
